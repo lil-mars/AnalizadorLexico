@@ -1,0 +1,1 @@
+palabras 1pal = $Hola$ decir pal;
