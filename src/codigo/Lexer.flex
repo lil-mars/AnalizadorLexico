@@ -16,5 +16,6 @@ numero |palabras | decir
 "$".*."$" { return Cadena;}
 "=" {return Igual;}
 {L}({L}|{D})* {lexeme=yytext(); return Variable;}
-("(-"{D}+")")|{D}+ {lexeme=yytext(); return Numero;}
+({D}{L})* {lexeme=yytext(); return Variable;}
+("(-"{D}+")")|{D} {lexeme=yytext(); return Numero;}
  . {return ERROR;}

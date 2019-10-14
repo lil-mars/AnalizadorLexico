@@ -88,8 +88,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     .addComponent(btnAnalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtEntrada))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
 
         pack();
@@ -99,7 +99,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void btnAnalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizarActionPerformed
         // TODO add your handling code here:
         //Crear un archivo: archivo.txt
-        File archivo = new File("archivo.txt");
+        File archivo = new File("archivo.es");
         PrintWriter escribir;
         try {
             escribir = new PrintWriter(archivo);
@@ -110,7 +110,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         }
         
         try {
-            Reader lector = new BufferedReader(new FileReader("archivo.txt"));
+            Reader lector = new BufferedReader(new FileReader("archivo.es"));
             //Debemos pasar por parametro un Reader a nuestro Lexer 
             Lexer lexer = new Lexer(lector);
             String resultado = "INICIO DE PROGRAMA\n\n";
@@ -121,6 +121,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 //Cuando estemos al Final
                 if (tokens == null) {
                     resultado += "\n\nFIN DEL PROGRAMA";
+                    System.out.println(resultado);
                     txtResultado.setText(resultado);
                     return;
                 }
