@@ -99,24 +99,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void btnAnalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizarActionPerformed
         // TODO add your handling code here:
         //Crear un archivo: archivo.txt
-        File archivo = new File("archivo.es");
-        PrintWriter escribir;
-        try {
-            escribir = new PrintWriter(archivo);
-            escribir.print(txtEntrada.getText());
-            escribir.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(FrmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+
+
         try {
             Reader lector = new BufferedReader(new FileReader("archivo.es"));
-            //Debemos pasar por parametro un Reader a nuestro Lexer 
+            //Debemos pasar por parametro un Reader a nuestro Lexer
             Lexer lexer = new Lexer(lector);
             String resultado = "INICIO DE PROGRAMA\n\n";
             while (true) {
-                //Busca las expresiones y las va leyendo 
-                //Va pasando de uno en uno 
+                //Busca las expresiones y las va leyendo
+                //Va pasando de uno en uno
                 Tokens tokens = lexer.yylex();
                 //Cuando estemos al Final
                 if (tokens == null) {
@@ -125,17 +117,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     txtResultado.setText(resultado);
                     return;
                 }
-                //Para comparar cada uno de las epresiones usamos una switch con la que compararemos con  los simbolos 
+                //Para comparar cada uno de las epresiones usamos una switch con la que compararemos con  los simbolos
                 switch (tokens) {
                     //Caso de que el token sea un Error  se aanade al a resutado
                     case ERROR:
                         resultado += lexer.yytext() + "Error de sintaxis\n";
                         break;
-                    //Caso de que se un identificador o palabra reservada 
+                    //Caso de que se un identificador o palabra reservada
                     case Variable: case Numero: case Reservadas:
                         resultado += lexer.lexeme + ": Token: " + tokens + "\n";
                         break;
-                    //Caso de que es un Token solo se mostrara el token 
+                    //Caso de que es un Token solo se mostrara el token
                     //Caso de que sea una Suma nos dira Suma
                     default:
                         resultado +=  lexer.yytext() + ": Token: " + tokens + "\n";

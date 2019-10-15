@@ -1,0 +1,1 @@
+palabras palabra = $Hola mundo$
