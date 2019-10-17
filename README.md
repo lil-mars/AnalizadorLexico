@@ -1,6 +1,6 @@
 # AnalizadorLexico
 GRAMATICA DEL LENGUAJE EASY
-
+```text
 <variable>::= {<Letra>} [<Digito>] 
 <Letra>::= a|b|...|y|z
 <Digito>::= 0|1|...|8|9  
@@ -11,7 +11,7 @@ GRAMATICA DEL LENGUAJE EASY
 <Definir entero> ::= <variable> = { <Digito> }   
 <operador>::= + |- |* | / |=   
 <SentenciaDeimpresion> ::= decir <variable>  
-
+```
 ::= de definicion (el esquema de la derecha desarrolla el elemento de la izquierda)  
 | de alternativa (se puede elegir unicamente uno de los elementos que separa)  
 {} de repeticion (los elementos que incluyen pueden repetirse cero o mas veces)  
