@@ -6,7 +6,7 @@ GRAMATICA DEL LENGUAJE EASY
 <Digito>::= 0|1|...|8|9
 <WhiteSpace>::= \n | \t | “ ”
 <Declarar entero>::= numero <variable>
-<Declarar cadena>::= palabra <variable>
+<Declarar cadena>::= palabras <variable>
 <DefinirCadena> ::=  <variable> = ${ <Letra> }$
 <Definir entero> ::= <variable> = { <Digito> }
 <operador>::= + |- |* | / |=
@@ -17,3 +17,6 @@ GRAMATICA DEL LENGUAJE EASY
 {} de repeticion (los elementos que incluyen pueden repetirse cero o mas veces)
 [] de opcion (los elementos que incluyen pueden utilizarse o no)
 () de agrupacion (sirven para agrupar los elementos que incluyen)
+
+COMPILACION
+ 
