@@ -18,5 +18,9 @@ GRAMATICA DEL LENGUAJE EASY
 [] de opcion (los elementos que incluyen pueden utilizarse o no)
 () de agrupacion (sirven para agrupar los elementos que incluyen)
 
-COMPILACION
- 
+COMPILACION LINUX (cd usr/codigo/)
+ 1.- Compilar JFLEX
+   $: jflex Lexer.flex
+ 2.- Compilar Easy
+   $: javac codigo/Easy.java
+   $: java codigo.Easy archivo.es
