@@ -1,0 +1,32 @@
+package codigo;
+
+import java_cup.runtime.*;
+
+parser code
+{:
+    private Symbol s;
+    
+    public void syntax_error(Symbol s){
+        this.s = s;
+    }
+
+    public Symbol getS(){
+        return this.s;
+}
+:};
+
+terminal    Linea, Igual, Variable, Numero, ERROR, Cadena, DeclararE, 
+            DeclararP, Decir, Suma, Resta, Multiplicacion, Division;
+non terminal 
+            DECIR, DECLARACION;
+DECLARACION ::= 
+    DeclararP Variable |
+    DeclararE Variable |
+    DeclararE Variable Igual Numero |
+    DeclararE Variable Igual Cadena 
+;
+    
+DECIR ::= 
+    Decir Cadena |
+    Decir Variable    
+;

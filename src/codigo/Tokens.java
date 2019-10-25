@@ -10,10 +10,17 @@ package codigo;
  * @author Charly Ponce
  */
 public enum Tokens {
-    Reservadas,
+    Linea,
     Igual,
     Variable,
     Numero,
     ERROR,
-    Cadena
+    Cadena,
+    DeclararE,
+    DeclararP,
+    Decir,
+    Suma,
+    Resta,
+    Multiplicacion,
+    Division
 }
